@@ -1,38 +1,289 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.App{
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+#wrap{
+  width:950px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#title{
+  font-size:28px;
+  margin-top:30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#smallTitle{
+  font-size : 15px;
+  margin-bottom: 5px;
+}
+
+#Privacy{
+  width: 1500px;
+  text-align: left;
+  margin : 0 auto;
+  padding : 30px 30px;
+}
+
+#topSection{
+  width: 100px;
+  float: left;  
+}
+
+
+#emailImg{
+  float : left;
+  width:33px;
+  height:33px;
+}
+
+#phoneImg{
+  float : left;
+  width:33px;
+  height:33px;
+}
+
+#birthImg{
+  float : left;
+  width:33px;
+  height:33px;
+}
+
+#careerImg{
+  float : left;
+  width:33px;
+  height:33px;
+}
+
+#email{
+  float : left;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+#phone{
+  float : left;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+#birth{
+  float : left;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+#career{
+  float : left;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+#careerSelect{
+     width:60px;
+     height:25px;
+     text-align: center;
+     margin-top:2px;
+}
+
+#red{
+  color:red;
+  font-size : 15px;
+}
+#technologyStack{
+  padding : 10px 30px;
+  float:left;
+  width: 1000px;
+}
+
+#Education{
+  padding : 10px 30px;
+  float: left;
+  width: 1000px;
+}
+
+#educationSelect{
+  border: none;
+  background-color: #F3F3F3;
+  border-radius: 7px;
+  width:720px;
+  height:48px;
+  padding: 0px 10px;
+}
+
+
+#link{
+  padding : 10px 30px;
+  float:left;
+  width: 1000px;
+}
+
+#githubImg{
+  width:50px;
+  height:50px;
+}
+
+#course{
+  padding : 10px 30px;
+  float:left;
+  width: 1000px;
+}
+
+#other{
+  padding : 10px 30px;
+  float:left;
+  width: 1000px;
+  height: 1000px;
+}
+
+#input{
+  border: none;
+  background-color: #F3F3F3;
+  border-radius: 7px;
+  width:700px;
+  height:48px;
+  padding: 0px 10px;
+}
+
+#inputLink{
+  position:relative;
+  bottom:18px;
+  border: 0px;
+  text-shadow: 0 0 0 black;
+  height:50px;
+  width:550px;
+  font-size: 25px;
+  padding:10px 10px;
+}
+
+#inputLink:focus{
+  outline:none;
+}
+
+#addButton{
+  position:relative;
+  bottom: -15px;
+  left:-375px;
+  border-radius: 50%;
+  width:30px;
+  height:30px;
+  background-color: rgb(69, 223, 69);
+  border:none;
+  color: white;
+  font-size : 20px;
+}
+
+#EducationAdd {
+  position : relative;
+  left:324px;
+  bottom:-3px;
+  font-size:15px;
+  color:rgb(69, 223, 69);
+}
+
+#addHr{
+  float:left;
+  margin-top:30px;
+  background-color : grey;
+  width:715px;
+  height: 2px;
+  border : none;
+}
+
+#menu {
+  width: 10%;
+  position: fixed;
+  left: 70%;
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+#PrivacyScroll{
+  border-left: 2px solid black;
+  padding: 7px 16px;
+  height:20px;
+  font-size:14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#technologyStackScroll{
+  border-left: 2px solid black;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
+}
+
+#EducationScroll{
+  border-left: 2px solid black;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
+}
+
+#linkScroll{
+  border-left: 2px solid black;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
+}
+
+#courseScroll{
+  border-left: 2px solid black;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
+}
+
+#otherScroll{
+  border-left: 2px solid black;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
+}
+
+
+#PrivacyScroll:hover{
+  border-left: 2px solid red;
+  padding: 7px 16px;
+  height:20px;
+  font-size:14px;
+}
+
+#technologyStackScroll:hover{
+  border-left: 2px solid red;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
+}
+
+#EducationScroll:hover{
+  border-left: 2px solid red;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
+}
+
+#linkScroll:hover{
+  border-left: 2px solid red;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
+}
+
+#courseScroll:hover{
+  border-left: 2px solid red;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
+}
+
+#otherScroll:hover{
+  border-left: 2px solid red;
+  height:20px;
+  padding: 7px 16px;
+  font-size:14px;
 }
