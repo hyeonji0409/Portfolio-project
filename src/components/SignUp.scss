@@ -1,0 +1,139 @@
+.container_signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  .container1_signup {
+    margin-top: 100px;
+    width: 700px;
+    height: 730px;
+    background: white;
+    position: relative;
+    display: grid;
+    box-shadow: 2px 2px 10px 0 rgba(#333, 0.2);
+  }
+  
+  #signup_input{
+    width:300px;
+    height:50px;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 3px solid black;
+    margin-left:20px;
+  }
+
+  #signup_input:focus { outline: none; }
+
+#necessaryTxt_box{
+    width: 640px;
+    height: 25px;
+    margin: 0 auto;
+    text-align:right;
+    display: block;
+}
+.necessary{
+  color:red;
+}
+.signUpText{
+    text-align : center;
+}
+
+#form{
+    margin : 0 auto;
+    text-align: left;
+}
+
+.memberTable{
+    margin: 0 auto;
+    margin-left: 15%;
+}
+
+
+.signupbutton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    width:200px;
+    cursor: pointer;
+    margin-top:40px;
+  }
+  .signupbutton {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+  }
+  
+  .signupbutton:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .signupcheckbutton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 11px 11px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0px 9px;
+    transition-duration: 0.4s;
+    width:78px;
+    cursor: pointer;
+    margin-top:14px;
+  }
+  .signupcheckbutton {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+  }
+  
+  .signupcheckbutton:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .signupbutton{
+    margin-bottom:200px;
+  }
+
+
+  .postCode_btn{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    width: 45px;
+    height: 38px;
+    left: 420px;
+    bottom: 493px;
+    margin-top: -11px;
+    z-index: 9999;
+    position: relative;
+} 
+.postCode_btn {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.postCode_btn:hover {
+  background-color: #555555;
+  color: white;
+}
