@@ -1,7 +1,6 @@
 import './App.css';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
-import { Link, Routes, Route } from 'react-router-dom';
+import AxiosSpring from './components/AxiosSpring';
+import Portfolio from './components/Portfolio';
 
 function App() {
   return (
