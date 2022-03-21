@@ -7,6 +7,7 @@ import axios from 'axios';
 
 
 
+
 function SignUp(props) {
 
 	//[추가]

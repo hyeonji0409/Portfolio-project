@@ -1,82 +1,101 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.scss';
-      
+
 
 
 function Login() {
-    
-    const [inputId, setInputId] = useState('')
-    const [inputPw, setInputPw] = useState('')
- 
+    let history = useNavigate();
+
+    const [memId, setInputId] = useState('')
+    const [memPw, setInputPw] = useState('')
+
     const handleInputId = (e) => {
         setInputId(e.target.value)
     }
- 
+
     const handleInputPw = (e) => {
         setInputPw(e.target.value)
     }
- 
-    const onClickLogin = () => {
-        console.log('click login')
-        console.log('ID : ', inputId)
-        console.log('PW : ', inputPw)
-        axios.post('/user_inform/onLogin', null, {
-            params: {
-            'user_id': inputId,
-            'user_pw': inputPw
-            }
-        })
-        .then(res => {
-            console.log(res)
-            console.log('res.data.userId :: ', res.data.userId)
-            console.log('res.data.msg :: ', res.data.msg)
-            if(res.data.userId === undefined){
-                // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.'
-                console.log('======================',res.data.msg)
-                alert('입력하신 id 가 일치하지 않습니다.')
-            } else if(res.data.userId === null){
-                // id는 있지만, pw 는 다른 경우 userId = null , msg = undefined
-                console.log('======================','입력하신 비밀번호 가 일치하지 않습니다.')
-                alert('입력하신 비밀번호 가 일치하지 않습니다.')
-            } else if(res.data.userId === inputId) {
-                // id, pw 모두 일치 userId = userId1, msg = undefined
-                console.log('======================','로그인 성공')
-                sessionStorage.setItem('user_id', inputId)
-            }
-            // 작업 완료 되면 페이지 이동(새로고침)
-            document.location.href = '/'
-        })
-        .catch()
+
+    // const onClickLogin = () => {
+    //     // console.log('click login')
+    //     // console.log('ID : ', memId)
+    //     // console.log('PW : ', memPw)
+    //     axios.post('http://localhost:8080/login/', null, {
+    //         params: {
+    //             'memId': memId,
+    //             'memPw': memPw
+    //         }
+    //     })
+    //         .then(res => {
+    //             console.log(res)
+    //             console.log('res.data.userId :: ', res.data)
+
+    //             // if (res.data === "ok") {
+    //             //     // id, pw 모두 일치 userId = userId1, msg = undefined
+    //             //     console.log('======================', '로그인 성공')
+    //             //     alert('로그인 성공')
+    //             //     sessionStorage.setItem('user_id', memId)
+    //             //     document.location.href = '/'
+    //             // }
+    //             // else {
+    //             //     // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.'
+
+    //             //     alert('로그인 실패')
+
+    //             // }
+
+    //         })
+    //         .catch()
+    // }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        var frmData = new FormData(document.frmLogin);
+
+        axios.post('http://localhost:8080/login/', frmData)
+            .then(
+                res => {
+                    if (res.data === "ok") {
+                        alert("로그인 성공");
+                        
+                        history('/'); // 메인 화면으로 이동
+                    } else {
+                        // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.''
+                        alert('로그인 실패');
+                    }
+
+                }
+            );
     }
- 
-     useEffect(() => {
-         axios.get('/user_inform/login')
-         .then(res => console.log(res))
-         .catch()
-     },[])
- 
-    return(
+
+
+    return (
         <div class="container">
-    <div class="container1">
-        <div class="loginform">
-            <h2>Login</h2>
-            <div class="login_id">
-                <label htmlFor='input_id'>ID : </label>
-                <input id="login_input" type='text' name='input_id' value={inputId} placeholder="ID" onChange={handleInputId} />
+            <div class="container1">
+                <div class="loginform">
+                    <h2>Login</h2>
+                    <form name="frmLogin" onSubmit={onSubmit}>
+                        <div class="login_id">
+                            <label htmlFor='memId'>ID : </label>
+                            <input id="memId" type='text' name='memId' value={memId} placeholder="ID" onChange={handleInputId} />
+                        </div>
+                        <div class="login_pw">
+                            <label htmlFor='input_pw'>PW : </label>
+                            <input id="memPw" type='password' name='memPw' value={memPw} placeholder="Password" onChange={handleInputPw} />
+                        </div>
+                        <div class="buttons">
+                            <input type="submit" value="login" />
+                            {/* <button class="loginbutton" type='button' onClick={onClickLogin}>Login</button> */}
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="login_pw">
-                <label htmlFor='input_pw'>PW : </label>
-                <input id="login_input" type='password' name='input_pw' value={inputPw} placeholder="Password" onChange={handleInputPw} />
-            </div>
-            <div class="buttons">
-                <button class="loginbutton" type='button' onClick={onClickLogin}>Login</button>
-                <button class="loginbutton" type='button' onClick={onClickLogin}>Sign Up</button>
-            </div>
-        </div>
-        </div>
         </div>
     )
 }
- 
+
 export default Login;
