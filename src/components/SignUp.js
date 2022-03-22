@@ -7,8 +7,10 @@ import axios from 'axios';
 
 
 
+
 function SignUp(props) {
 
+	
 	//[추가]
 	const [address, setAddress] = useState(''); // 주소
 
@@ -29,17 +31,18 @@ function SignUp(props) {
         setIsPopupOpen(false)
     }
 
-	
-
 
 	let history = useNavigate();
 
+
+	
     //state
     const [mem, setMem] = useState({
         memId: '',
         memPw: '',
+		memrePw:'',
         memName: '',
-        memEamil: '',
+        memEmail: '',
         memPhone: '',
 		memAddress: '',
 		memAddressDetail: ''
@@ -57,44 +60,113 @@ function SignUp(props) {
         setMem({
         memId: '',
         memPw: '',
+		memrePw:'',
         memName: '',
-        memEamil: '',
+        memEmail: '',
         memPhone: '',
 		memAddress: '',
 		memAddressDetail: ''
     })
     };
+	
 
     const onSubmit = (e) => {
-        e.preventDefault();
-
+        e.preventDefault();	
         var frmData = new FormData(document.frmInsert);
+		
+		if (mem.memId === "") { //해당 입력값이 없을 경우 같은말: if(!uid.value)
+			alert("아이디를 입력하세요.");
+			mem.memId.focus(); //focus(): 커서가 깜빡이는 현상, blur(): 커서가 사라지는 현상
+			
+		};
+		if (mem.memPw === "") {
+			alert("비밀번호를 입력하세요.");
+			mem.memPw.focus();
+		};
+		
+	
+		if (mem.memrePw === "") {
+			alert("비밀번호을 확인해주세요.");
+			mem.memrePw.focus();
+		};
+	
+	
+		if (mem.memrePw !== mem.memPw) {
+			alert("비밀번호가 일치하지 않습니다.");
+			mem.memrePw.focus();
+		};
+	
+		if (mem.memName === "") {
+			alert("이름을 입력하세요.");
+			mem.memName.focus();
+		};
+	
+		if (mem.memEmail === "") {
+			alert("이메일 주소를 입력하세요.");
+			mem.memEmail.focus();
+		}
+	
+		if (mem.memPhone === "") {
+			alert("휴대폰 번호를 입력하세요.");
+			mem.memPhone.focus();
+		}
+	
+		if (address === "") {
+			alert("주소를 입력하세요.");
+			address.focus();
+		}
+	
+		if (mem.memAddressDetail === "") {
+			alert("상세주소를 입력하세요.");
+			mem.memAddressDetail.focus();
+		}
 
         axios.post('http://localhost:8080/signup/', frmData)
             .then(
-                response => {
+					
+				response => {
                     alert("회원가입 완료");
                     history('/login'); 
                 }
             );
 			}
+		
+	const onSubmit1 = (e) => {
+		e.preventDefault();
+		
+		axios.post('http://localhost:8080/idcheck/'+ mem.memId)
+			.then(
+				response => {
+					
+					// alert("사용가능");
+					console.log(response.data)
+					if (response.data === "use") {
+                        alert("사용가능");
+                        console.log("사용");
+                    } else {
+                        
+                        alert('사용 불가');
+                    }
+				}
+			);
+	}
 
   return(
-      <div class="container_signup">
-  <div class="container1_signup">
-      <div class="loginform">
+      <div className="container_signup">
+  <div className="container1_signup">
+      <div className="loginform">
       <h2>SignUp</h2>
       <div id="necessaryTxt_box">
-			<span class="necessary">*</span> 필수입력사항
+			<span className="necessary">*</span> 필수입력사항
 		</div>
     
       <form name="frmInsert" onSubmit={onSubmit} onReset={onReset}>
-			<table class="memberTable">
+			<table className="memberTable">
 				<tbody>
 				<tr>
 					<th>
 						아이디
-						<span class="necessary">
+						<span className="necessary">
 									*
 								</span>
 					</th>
@@ -103,14 +175,14 @@ function SignUp(props) {
 						
 					</td>
 					<td>
-						<button type="button" class="IDdouble_check signupcheckbutton" onclick="doubleCheck()">중복확인</button>
+					<button name="frmInsert1" onClick={onSubmit1}>중복확인</button>
 					</td>
 				</tr>
 
 				<tr>
 					<th>
 						비밀번호
-						<span class="necessary">
+						<span className="necessary">
 									*
 								</span>
 					</th>
@@ -122,19 +194,19 @@ function SignUp(props) {
 				<tr>
 					<th>
 						비밀번호 확인
-						<span class="necessary">
+						<span className="necessary">
 									*
 								</span>
 					</th>
 					<td>
-						<input type="password" name="memberPW_check" id="signup_input" maxlength="20" placeholder="비밀번호를 한 번 더 입력해주세요."/>
+						<input type="password" name="memrePw" id="signup_input" maxlength="20" placeholder="비밀번호를 한 번 더 입력해주세요." value={mem.memrePw} onChange={onChange}/>
 					</td>
 				</tr>
 
 				<tr>
 					<th>
 						성명
-						<span class="necessary">
+						<span className="necessary">
 									*
 								</span>
 					</th>
@@ -146,7 +218,7 @@ function SignUp(props) {
 				<tr>
 					<th>
 						이메일
-						<span class="necessary">
+						<span className="necessary">
 									*
 								</span>
 					</th>
@@ -158,7 +230,7 @@ function SignUp(props) {
 				<tr>
 					<th>
 						휴대폰
-						<span class="necessary">
+						<span className="necessary">
 									*
 								</span>
 					</th>
@@ -170,7 +242,7 @@ function SignUp(props) {
 				<tr>
 					<th>
 						주소
-						<span class="necessary">
+						<span className="necessary">
 									*
 								</span>
 					</th>
@@ -191,7 +263,7 @@ function SignUp(props) {
 				<tr>
 					<th>
 						상세주소
-						<span class="necessary">
+						<span className="necessary">
 									*
 								</span>
 					</th>
@@ -206,8 +278,8 @@ function SignUp(props) {
 				</tbody>
 			</table>
 			
-			<div class="submitBox">
-      			<input class="signupbutton" type='submit' value="회원가입"/>				
+			<div className="submitBox">
+      			<input className="signupbutton" type='submit' value="회원가입"/>				
 			</div>
 		</form>
  
