@@ -1,43 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import Login from './Login';
+import { Link, Routes, Route } from 'react-router-dom';
 import styled from "styled-components";
 // import axios from 'axios';
 
 import './About.scss';
+import foilo_list from './images/foilo_list.png';
 
 
 
 function About() {
-
-    // const AD = () => {
-    //     const [isHovering, setIsHovering] = useState(0);
-
-    //     return (
-    //         <Wrapper
-    //             onMouseOver={() => setIsHovering(1)}
-    //             onMouseOut={() => setIsHovering(0)}
-    //         ></Wrapper>
-    //     )
-    // }
-
-
-    // const [num, setNumCount] = useState(10);
-    // const [countTimes, setCountTimes] = useState(0);
-
-    // useEffect(() => {
-    //     setCountTimes(countTimes + 1)
-    // }, [num])
-
-    // const plusMinus = (flag) => {
-    //     console.log('호출>>>');
-    //     console.log(flag, num);
-
-    //     if (flag == '+') {
-    //         setNumCount(num + 1);
-    //     } else {
-    //         setNumCount(num - 1);
-    //     }
-    // };
-
 
 
     return (
@@ -48,7 +20,7 @@ function About() {
                     <p className="about_text">나만의 이력과 포트폴리오를 손쉽게</p>
                     <p>Please draw your resume.</p>
                     <p>Like your beautiful and enjoyable life!</p>
-                    <button className="theme_button">get start ▷</button>
+                    <Link to='/login'><button className="theme_button">get start ▷</button></Link>
                 </div>
             </div>
             <div className="contain2">
@@ -61,28 +33,111 @@ function About() {
                     </div>
                 </div>
                 <div className="contain2-2">
-                    <div className="about_keyword">
-                        <h1>Keyword</h1>
-                        <p>손쉬운 나만의 이력, 포트폴리오 관리</p>
-                        <p>Todo-List로 스케줄을 한 눈에</p>
+                    <div className="key_div">
+                        <div className="key_img">
+                        </div>
+                        <div className="about_keyword">
+                            <h1>Keyword</h1>
+                            <p>손쉬운 나만의 이력, 포트폴리오 관리</p>
+                            <p>Todo-List로 스케줄을 한 눈에</p>
+                        </div>
                     </div>
-                    <div className="about_module">
-                        <h1>Products</h1>
-                        <ul>
-                            <li>Overview</li>
-                            <li>Insert Portfoilo</li>
-                            <li>Insert RESUME</li>
-                            <li>Todo-List</li>
-                        </ul>
+                    <div className="module_div">
+                        <div className="about_module">
+                            <h1>Products</h1>
+                            <ul className="about_ul">
+                                <li>Overview</li>
+                                <li>Insert Portfoilo</li>
+                                <li>Insert RESUME</li>
+                                <li>Todo-List</li>
+                            </ul>
+                        </div>
+                        <div className="module_img">
+                        </div>
                     </div>
                 </div>
             </div>
             <div className="contain3">
-                <div className="Howtowork">
-                    <h1>How To Work</h1>
-                    <p>개인 포트폴리오를 업로드 하고 이력서 등의 자료를 관리할 수 있는 홈페이지</p>
+                <div className="contain3-1">
+                    <div className="howto_space">
+                        <h1>이미지 들어가는 자리</h1>
+                        <img src={foilo_list}></img>
+                    </div>
+                    <div className="Howtowork">
+                        <h1>How To Work</h1>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <button className="howto_button">go ▶</button>
+                    </div>
                 </div>
+
             </div>
+
+            <div className="contain3">
+                <div className="contain3-1">
+                    <div className="howto_space">
+                        <h1>이미지 들어가는 자리</h1>
+                        <img src={foilo_list}></img>
+                    </div>
+                    <div className="Howtowork">
+                        <h1>How To Work</h1>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <button className="howto_button">go ▶</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className="contain3">
+                <div className="contain3-1">
+                    <div className="howto_space">
+                        <h1>이미지 들어가는 자리</h1>
+                        <img src={foilo_list}></img>
+                    </div>
+                    <div className="Howtowork">
+                        <h1>How To Work</h1>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <button className="howto_button">go ▶</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <Routes>
+                <Route path='/login' element={<Login />} />
+            </Routes>
         </div>
 
     );
