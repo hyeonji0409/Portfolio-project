@@ -2,11 +2,11 @@ import './App.css';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import { Link, Routes, Route } from 'react-router-dom';
-<<<<<<< HEAD
+
 import Mypage from './components/Mypage';
-=======
+
 import Portfolio from './components/Portfolio';
->>>>>>> a0599ac5a7f970613619988872ec8249ef6b4dc4
+
 
 function App() {
   return (

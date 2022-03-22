@@ -27,7 +27,7 @@ function Logout() {
             console.log('res.data.userId :: ', res.data)
             
             alert('로그아웃 되었습니다')
-            document.location.href = '/'
+            
         })
         .catch()
     }
@@ -35,8 +35,8 @@ function Logout() {
      
  
     return(
-        <div class="container">
-    <button class="loginbutton" type='button' onClick={onClickLogout}>Logout</button>
+        <div className="container">
+    <button className="loginbutton" type='button' onClick={onClickLogout}>Logout</button>
         </div>
     )
 }

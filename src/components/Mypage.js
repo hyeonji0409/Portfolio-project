@@ -9,8 +9,13 @@ function Mypage() {
     
  
     return(
-        <div>
-            {sessionData}님
+        <div className='box'>
+            
+        <div className='mypagebox'>
+            <div className='userName'>
+                {sessionData}
+            </div>
+        </div>
         </div>
     )
 }
