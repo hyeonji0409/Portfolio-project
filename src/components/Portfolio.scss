@@ -1,0 +1,32 @@
+.wrap{
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.subHeader{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.PortfolioContents{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contentBox{
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+    width: 25%;
+    height: 350px;
+}
+
+.contentsImg{
+    height: 50%;
+    border: 1px solid red;
+}
+
+.contentsText{
+    height: 50%;
+}
