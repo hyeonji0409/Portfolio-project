@@ -12,6 +12,29 @@ npm install @mui/material @emotion/react @emotion/styled
 ```
 
 ```
-// ckEditor
 npm install --save @ckeditor/ckeditor5-react @ckeditor/ckeditor5-build-classic
+```
+
+```
+npm install react-scroll
+```
+
+```
+npm install styled-components
+```
+
+```
+npm install node-sass
+```
+
+```
+npm install jquery
+```
+
+```
+npm install react-hook-form
+```
+
+```
+npm install react-daum-postcode
 ```
