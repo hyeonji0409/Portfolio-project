@@ -2,16 +2,39 @@ import './App.css';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import About from './components/About';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Introduce from './components/Introduce';
 import { Link, Routes, Route } from 'react-router-dom';
 import Bottom from './components/Bottom';
-
+import Logout from './components/Logout';
 import Mypage from './components/Mypage';
 import Portfolio from './components/Portfolio';
 import PortfolioInsert from './components/PortfolioInsert';
 
 
 function App() {
+  let history = useNavigate();
+
+    const [memId, setInputId] = useState('')
+    const [memPw, setInputPw] = useState('')
+ 
+    const handleInputId = (e) => {
+        setInputId(e.target.value)
+    }
+ 
+    const handleInputPw = (e) => {
+        setInputPw(e.target.value)
+        
+    }
+ 
+    const onClickLogout = () => {
+        sessionStorage.removeItem("memId");
+
+        alert('로그아웃 되었습니다')
+        history('/login');   
+
+    }
   return (
     <>
       <div className="App">
@@ -35,7 +58,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/mypage' element={<Mypage />} />
-          <Route path='/logout' element={<Mypage />} />
+          <Route path='/logout' element={<Logout />} />
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/portfolioInsert' element={<PortfolioInsert/>} />
         </Routes>

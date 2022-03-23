@@ -29,8 +29,9 @@ function Login() {
                 res => {
                     if (res.data === "ok") {
                         alert("로그인 성공");
-                        
-                        history('/'); // 메인 화면으로 이동
+                        sessionStorage.setItem("memId", memId);
+
+                        history('/introduce'); // 메인 화면으로 이동
                     } else {
                         // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.''
                         alert('로그인 실패');
