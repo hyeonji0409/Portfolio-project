@@ -7,8 +7,8 @@ import { Link, Routes, Route } from 'react-router-dom';
 import Bottom from './components/Bottom';
 
 import Mypage from './components/Mypage';
-
 import Portfolio from './components/Portfolio';
+import PortfolioInsert from './components/PortfolioInsert';
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
           <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
           <Link to='/mypage' ><button className='MenuButton'>마이페이지</button></Link> &nbsp;
           <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp;
+          <Link to='/portfolio' >Portfolio</Link> &nbsp;
 
           {/* <hr></hr> */}
         </div>
@@ -35,6 +36,7 @@ function App() {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/mypage' element={<Mypage />} />
           <Route path='/logout' element={<Mypage />} />
+          <Route path='/portfolioInsert' element={<PortfolioInsert/>} />
         </Routes>
       </div>
       <div>
