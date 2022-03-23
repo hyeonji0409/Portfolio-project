@@ -7,18 +7,26 @@
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
+
+.pageTitle{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
 
 .PortfolioContents{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 .contentBox{
     border-radius: 10px;
     box-shadow: 10px 10px 10px;
-    width: 25%;
+    width: 33%;
     height: 350px;
 }
 
@@ -29,4 +37,30 @@
 
 .contentsText{
     height: 50%;
+}
+
+.cardBox{
+    display: flex;
+    justify-content: space-around;
+    width: 33%;
+}
+
+// MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root cardBox css-1syf4pq-MuiPaper-root-MuiCard-root{
+//     width: 33%;
+// }
+
+.portCard{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+a{
+    text-decoration: none;
+}
+
+#writeBtn{
+    line-height: 60px;
 }

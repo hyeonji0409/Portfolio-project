@@ -1,4 +1,9 @@
 .bottom_main {
+  height: 80vh;
+  width: auto;
+
+  //display: flex;
+  margin-top: 100px;
   background-color: black;
   color: ivory;
   height: 600px;
@@ -9,4 +14,38 @@
   text-align: center;
   padding: 10px;
   margin: 10px;
+}
+
+.bottom_div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  //flex-direction: column;
+
+  width: auto;
+  height: auto;
+}
+
+.bottom_div div {
+  width: 25%;
+  margin: 30px;
+  padding: 10px;
+}
+
+.bottom_div p {
+  font-size: large;
+  font-weight: 600;
+}
+
+a {
+  text-decoration-line: none;
+}
+a:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bottom_prd {
+  border: 0;
+  background-color: black;
+  color: #fff;
 }

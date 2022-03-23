@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import React , { useState, Component }from "react";
+import React, { useState, Component } from "react";
 import axios from 'axios';
 import './PortfolioInsert.scss';
 import TextField from '@mui/material/TextField';
@@ -25,19 +25,19 @@ function PortfolioInsert(props) {
         const { value, name } = e.target; // e.target에서 name과 value 추출
         setPort({
             ...port, // 기존의 port객체 복사
-            [name] : value // name 키를 가진 값을 value로 설정
+            [name]: value // name 키를 가진 값을 value로 설정
         });
     };
 
     const onReset = () => {
         setPort({
             memId: '',
-        portStackNo: '',
-        portNo: '',
-        portTitle: '',
-        portSubTitle: '',
-        gitLink: '',
-        portDetails: ''
+            portStackNo: '',
+            portNo: '',
+            portTitle: '',
+            portSubTitle: '',
+            gitLink: '',
+            portDetails: ''
         })
     };
 
@@ -47,18 +47,18 @@ function PortfolioInsert(props) {
         var frmData = new FormData(document.portfolioInsert);
 
         axios.post('http://localhost:8080/insertPortfolio/' + frmData)
-        .then(
-            response => {
-                alert("등록 완료");
-                history('portfolio'); // portfolio 페이지로 이동
-            }
-        );
+            .then(
+                response => {
+                    alert("등록 완료");
+                    history('portfolio'); // portfolio 페이지로 이동
+                }
+            );
     }
     
   return (
     <div className='container_portfolioInsert'>
         <div className='insertForm'>
-            <h2>Insert Your Project</h2>
+            <h2>프로젝트를 등록해주세요</h2>
         </div>
 
         <form className='portfolioInsert' name='portfolioInsert' onSubmit={onSubmit} onReset={onReset}>
@@ -111,7 +111,7 @@ function PortfolioInsert(props) {
             <div className='editor'>
                 <CKEditor
                     editor={ ClassicEditor }
-                    data="<p>Hello from CKEditor 5!</p>"
+                    data="내용을 입력해주세요"
                     onReady={ editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log( 'Editor is ready to use!', editor );
@@ -146,6 +146,6 @@ const stacks = [
     { label: 'Javascript', year: 1957 },
     { label: "jQuery", year: 1993 },
     { label: 'Git', year: 1994 },
-  ];
+];
 
 export default PortfolioInsert
