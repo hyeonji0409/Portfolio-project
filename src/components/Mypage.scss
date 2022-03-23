@@ -1,14 +1,149 @@
+/* vote.css */
+.box{
+    background-color: #FFFFFF;
+    text-align: center;
+    position: relative;
+    width: 1300px;
+    margin: 0 auto;
 
-.mypagebox{
-    border: 1px solid red;
-    width:1300px;
-    height:500px;
-    display: inline-block;
 }
 
-.userName{
-    border: 1px solid blue;
-    width:80px;
-    height:50px;
-    padding:10px;
+.card {
+    background: #fff;
+    border-radius: 30px;
+    display: inline-block;
+    height: 130px;
+    margin: 1rem;
+    position: relative;
+    width: 1000px;
+    margin-bottom:32px;
+  }
+  
+  .card-2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    text-align:left;
+  }
+  
+  .portfoliobox{
+      width:1000px;
+      font-size:25px;
+      height: 130px;
+      padding-top:33px;
+      margin-left:8px;
+  }
+
+  .voteMain{
+      
+      margin-top:25px;
+  }
+  
+ 
+  .voteMain input[type=radio] {
+      display: none;
+  }
+  
+  #tab1:checked ~ .tab label:nth-child(1),
+  #tab2:checked ~ .tab label:nth-child(2){
+        box-shadow: none;
+        background-color: #000001;
+        color:white;
+  }
+  
+  .voteContent > div{
+      display: none;
+  }
+  
+  #tab1:checked ~ .voteContent div:nth-child(1),
+  #tab2:checked ~ .voteContent div:nth-child(2){
+      display: block;
+  
+  }
+  
+  .tab{
+      overflow: hidden;
+  
+  }
+  
+  .voteResult{
+      margin-bottom: 15px;
+      width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      height:300px;
+  }
+  
+  .tab label{
+      font-size: 18px;
+      cursor: pointer;
+      float: left;
+      width: 50%;
+      text-align: center;
+      padding: 15px 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+      user-select: none;
+      -webkit-user-select: none;
+      border-radius:28px;
+      background-color: #d8d8d9;
+  }
+  
+  .tab label:hover{
+      background-color: #000001;
+      color: white;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+  }
+  
+  
+  .voteContent > div{
+      padding: 20px;
+      font-size: 17px;
+      background-color: white;
+  }
+  
+    th, td {
+      padding: 10px;
+    }
+  
+  
+  .voteResult{
+      justify-content: center;
+  }
+  
+  .voteBtn {
+      background-color: #000001;
+      border: none;
+      color: white;
+      padding: 9px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      cursor: pointer;
+  }
+  .voteBtn {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #000001;
+      float:right;
+      border-radius:24px;
+  }
+  
+  
+  .voteBtn:hover {
+      background-color: #000001;
+      color: white;
+  }
+  .voteBtn>a:hover {
+      
+      color: white;
+  }
+  
+.bottonbox{
+    margin-bottom:10px;
 }
