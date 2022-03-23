@@ -8,6 +8,7 @@ function PortfolioListItem(props) {
     
 
   return (
+
     <a className='contentBox'>
         <div>
             <div className='contentsImg'>
@@ -20,6 +21,7 @@ function PortfolioListItem(props) {
             </div>
         </div>
     </a>
+
   )
 }
 
