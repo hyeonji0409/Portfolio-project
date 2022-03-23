@@ -60,10 +60,64 @@ function About() {
             <div className="contain3">
                 <div className="contain3-1">
                     <div className="howto_space">
-                        <h1>이미지 들어가는 자리</h1>
+                        <h1>포트폴리오 목록</h1>
                         <img src={foilo_list}></img>
                     </div>
                     <div className="Howtowork">
+                        <h1>How To Work</h1>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <div className="howto_p">
+                            <p>포트폴리오 썸네일 - 사진 / gif로 등록</p>
+                            <p>사용 기술 - JS, HTML, CSS, Spring Boot 등 태그 추가</p>
+                            <p>간단한 설명</p>
+                        </div>
+                        <div className="howto_p">
+                            <h3>지금 한번 확인해보세요!</h3>
+
+                        </div>
+                        <button className="howto_button">go ▶</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className="contain3">
+                <div className="contain3-2">
+                    <div className="howto_space">
+                        <h1>이미지 들어가는 자리</h1>
+                        <img src={foilo_list}></img>
+                    </div>
+                    <div className="Howtowork2">
+                        <h1 className="Howto_h1">How To Work</h1>
+                        <div className="howto_p">
+                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
+                            <p>검색 기능 - 스택으로 검색</p>
+                        </div>
+                        <div className="howto_p">
+                            <p>포트폴리오 썸네일 - 사진 / gif로 등록</p>
+                            <p>사용 기술 - JS, HTML, CSS, Spring Boot 등 태그 추가</p>
+                            <p>간단한 설명</p>
+                        </div>
+                        <div className="howto_p">
+                            <h3>지금 한번 확인해보세요!</h3>
+
+                        </div>
+                        <button className="howto_button">go ▶</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className="contain3">
+                <div className="contain3-3">
+                    <div className="howto_space">
+                        <h1>이미지 들어가는 자리</h1>
+                        <img src={foilo_list}></img>
+                    </div>
+                    <div className="Howtowork3">
                         <h1>How To Work</h1>
                         <div className="howto_p">
                             <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
@@ -83,39 +137,13 @@ function About() {
 
             </div>
 
-            <div className="contain3">
-                <div className="contain3-1">
-                    <div className="howto_space">
+            <div className="contain4">
+                <div className="contain3-4">
+                    <div className="howto_space_1">
                         <h1>이미지 들어가는 자리</h1>
                         <img src={foilo_list}></img>
                     </div>
-                    <div className="Howtowork">
-                        <h1>How To Work</h1>
-                        <div className="howto_p">
-                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
-                            <p>검색 기능 - 스택으로 검색</p>
-                        </div>
-                        <div className="howto_p">
-                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
-                            <p>검색 기능 - 스택으로 검색</p>
-                        </div>
-                        <div className="howto_p">
-                            <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
-                            <p>검색 기능 - 스택으로 검색</p>
-                        </div>
-                        <button className="howto_button">go ▶</button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div className="contain3">
-                <div className="contain3-1">
-                    <div className="howto_space">
-                        <h1>이미지 들어가는 자리</h1>
-                        <img src={foilo_list}></img>
-                    </div>
-                    <div className="Howtowork">
+                    <div className="Howtowork3">
                         <h1>How To Work</h1>
                         <div className="howto_p">
                             <p>최신순, 오래된순, 조회 수, 기술순서로 정렬</p>
