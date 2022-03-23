@@ -2,6 +2,8 @@ import React from 'react';
 import Side from './Side';
 import componentAdd from './componentAdd';
 
+import './Career.scss';
+
 function career(props) {   
 
     const Add = componentAdd()
