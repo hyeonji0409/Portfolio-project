@@ -58,7 +58,7 @@ function PortfolioInsert(props) {
   return (
     <div className='container_portfolioInsert'>
         <div className='insertForm'>
-            <h2>Insert Your Project</h2>
+            <h2>프로젝트를 등록해주세요</h2>
         </div>
 
         <form className='portfolioInsert' name='portfolioInsert' onSubmit={onSubmit} onReset={onReset}>
@@ -111,7 +111,7 @@ function PortfolioInsert(props) {
             <div className='editor'>
                 <CKEditor
                     editor={ ClassicEditor }
-                    data="<p>Hello from CKEditor 5!</p>"
+                    data="내용을 입력해주세요"
                     onReady={ editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log( 'Editor is ready to use!', editor );
