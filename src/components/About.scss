@@ -1,0 +1,238 @@
+
+.contain {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
+  height: 550vh;
+}
+
+.contain1 {
+  background: url(./images/programmer1_unsplash.jpg);
+  background-size: cover;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: column;
+  background-color: rgb(140, 131, 185);
+  height: 100vh;
+  width: 99%;
+}
+
+.contain2 {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //flex-direction: column;
+  background-color: rgba(250, 249, 255, 0.8);
+  height: 100vh;
+  width: 99%;
+}
+
+.contain2-1 {
+  background: url(./images/aboutinfo.jpg);
+  background-size: cover;
+  width: 47%;
+
+  border-radius: 30px;
+}
+
+.contain2-2 {
+  width: 47%;
+}
+
+.key_div, .module_div {
+  display: flex;
+}
+
+.contain3 {
+  margin: 10px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: column;
+  // background-color: rgb(140, 131, 185);
+  height: 100vh;
+  width: 99%;
+}
+
+.contain3-1 {
+  display: flex;
+  border: 5px solid rgb(140, 131, 185);
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(to left, #fff 59%, rgb(215, 210, 255) 41%);
+}
+
+.about_theme {
+  padding: 30px;
+  text-align: left;
+  color: aliceblue;
+  //background-color: rgb(187, 180, 223);
+  width: 95%;
+}
+
+.howto_space {
+  text-align: center;
+  width: 50%;
+  height: auto;
+  overflow: hidden;
+}
+
+.howto_space img {
+  max-width: 42%;
+  height: auto;
+  //display: block;
+  border: rgb(250, 245, 255) solid 5px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px 0 rgba(rgb(37, 37, 37), 0.3);
+}
+
+.Howtowork {
+  padding: 60px;
+  text-align: center;
+  width: auto;
+  height: auto;
+}
+
+.howto_p {
+  margin: 10px;
+  padding: 10px;
+}
+
+.about_keyword {
+  padding: 60px;
+  padding-left: 20px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  text-align: center;
+  width:50%;
+}
+
+.about_keyword h1 {
+  background-color: rgba(217, 205, 240, 0.8);
+  border-radius: 5px;
+  color: darkslateblue;
+}
+
+.key_img {
+  // margin-left: 90px;
+  // margin-top: 40px;
+  // margin-bottom: 40px;
+  margin: 40px;
+  padding: 20px;
+  background: url(./images/audit.png);
+  background-size: auto;
+  width:50%;
+  // max-width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.about_module {
+  padding: 60px;
+  padding-right: 20px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  text-align: center;
+  width:50%;
+}
+
+.about_module h1 {
+  background-color: rgba(103, 92, 255, 0.767);
+  color: #fff;
+  border-radius: 5px;
+}
+
+.module_img {
+  // margin-top: 40px;
+  // margin-bottom: 40px;
+  margin: 50px;
+  padding: 20px;
+  background: url(./images/keywording.png);
+  background-size: auto;
+  width:50%;
+  // max-width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.about_info {
+  padding: 50px;
+  text-align: center;
+  width: auto;
+  font-weight: bold;
+}
+
+.about_info p {
+  margin: 100px;
+  font-size: large;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+}
+
+.theme_button {
+  color: #000;
+  background-color: #fff;
+  font-size: 14px;
+
+  cursor: pointer;
+  display: inline-block;
+  padding: 1.5em 2.2em;
+  border: 0;
+  opacity: 1;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.theme_button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.howto_button {
+  color: rgb(103, 92, 255);
+  background-color: #fff;
+  font-size: 14px;
+
+  box-shadow: 2px 2px 10px 0 rgba(rgb(65, 65, 65), 0.3);
+
+  cursor: pointer;
+  display: inline-block;
+  padding: 1.5em 2.2em;
+  border: 2px solid rgb(103, 92, 255);
+  border-radius: 10px;
+  opacity: 1;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.howto_button:hover {
+  background-color: rgba(215, 210, 255, 0.356);
+}
+
+.about_text {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.about_ul {
+  list-style: none;
+  padding-left: 0px;
+}
