@@ -22,7 +22,7 @@ function App() {
           <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
           <Link to='/mypage' ><button className='MenuButton'>마이페이지</button></Link> &nbsp;
           <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp;
-          <Link to='/portfolio' >Portfolio</Link> &nbsp;
+          <Link to='/portfolio' ><button className='MenuButton'>portfolio</button></Link> &nbsp;
 
           {/* <hr></hr> */}
         </div>
@@ -36,6 +36,7 @@ function App() {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/mypage' element={<Mypage />} />
           <Route path='/logout' element={<Mypage />} />
+          <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/portfolioInsert' element={<PortfolioInsert/>} />
         </Routes>
       </div>
