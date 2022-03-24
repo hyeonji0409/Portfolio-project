@@ -27,7 +27,7 @@ function PortfolioiDetail(props) {
     const loadData = async () => {
         setLoading(true);
         const response = await axios.get('http://localhost:8080/portfolioDetailView/' + portNo);
-        console.log(response.data);
+        console.log(response.data.portNo);
 
         setPort({
             memId: response.data.memId,
