@@ -18,7 +18,8 @@ function PortfolioInsert(props) {
         portTitle: '',
         portSubTitle: '',
         gitLink: '',
-        portDetails: ''
+        portDetails: '',
+        portImages: ''
     });
 
     const onChange = (e) => {
@@ -37,7 +38,8 @@ function PortfolioInsert(props) {
             portTitle: '',
             portSubTitle: '',
             gitLink: '',
-            portDetails: ''
+            portDetails: '',
+            portImages: ''
         })
     };
 
@@ -50,7 +52,7 @@ function PortfolioInsert(props) {
             .then(
                 response => {
                     alert("등록 완료");
-                    history('portfolio'); // portfolio 페이지로 이동
+                    history('/portfolio'); // portfolio 페이지로 이동
                 }
             );
     }
@@ -61,7 +63,7 @@ function PortfolioInsert(props) {
             <h2>프로젝트를 등록해주세요</h2>
         </div>
 
-        <form className='portfolioInsert' name='portfolioInsert' onSubmit={onSubmit} onReset={onReset}>
+        <form name='portfolioInsert' onSubmit={onSubmit} onReset={onReset}>
             <table className='poTable'>
                 <tr>
                     <th>
@@ -93,6 +95,7 @@ function PortfolioInsert(props) {
                             id="combo-box-demo"
                             options={stacks}
                             sx={{ width: 300 }}
+                            value={port.stackNo} onChange={onChange}
                             renderInput={(params) => <TextField {...params} label="Stack" />}
                         />
                     </td>
@@ -111,7 +114,10 @@ function PortfolioInsert(props) {
             <div className='editor'>
                 <CKEditor
                     editor={ ClassicEditor }
-                    data="내용을 입력해주세요"
+                    config={{
+                        placeholder: "글을 입력해주세요"
+                    }}
+                    data=""
                     onReady={ editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log( 'Editor is ready to use!', editor );
@@ -130,7 +136,7 @@ function PortfolioInsert(props) {
                 />
             </div>		
             	
-            <input class="portBtn" type='reset' value="취소"/>
+            {/* <input class="portBtn" type='reset' value="취소"/> */}
             <input class="portBtn" type='submit' value="등록"/>
       			
         </form>
@@ -139,13 +145,15 @@ function PortfolioInsert(props) {
 }
 
 const stacks = [
-    { label: 'Java', year: 1994 },
-    { label: 'Python', year: 1972 },
-    { label: 'Spring Boot', year: 1974 },
-    { label: 'Django', year: 2008 },
-    { label: 'Javascript', year: 1957 },
-    { label: "jQuery", year: 1993 },
-    { label: 'Git', year: 1994 },
+    { label: 'Java', stackNo: 1 },
+    { label: 'Python', stackNo: 2 },
+    { label: 'C++', stackNo: 3 },
+    { label: 'Spring Boot', stackNo: 4 },
+    { label: 'React', stackNo: 5 },
+    { label: "JavaScript", stackNo: 6 },
+    { label: 'jQuery', stackNo: 7 },
+    { label: 'Node.js', stackNo: 8 },
+    { label: 'Git', stackNo: 9 },
 ];
 
 export default PortfolioInsert
