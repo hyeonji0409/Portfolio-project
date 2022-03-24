@@ -57,7 +57,6 @@ function App() {
         </div>
 
 
-
         <Routes>
           <Route path='/' element={<About />} />
           <Route path='/Introduce' element={<Introduce />} />
@@ -69,6 +68,7 @@ function App() {
           <Route path='/portfolioInsert' element={<PortfolioInsert />} />
           <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail />} />
           <Route path='/career' element={<Career />} />
+          
         </Routes>
       </div>
 
