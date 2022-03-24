@@ -12,6 +12,7 @@ import Mypage from './components/Mypage';
 import Portfolio from './components/Portfolio';
 import PortfolioInsert from './components/PortfolioInsert';
 import PortfolioiDetail from './components/PortfolioiDetail';
+import Career from './components/Career';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
             <Link to='/mypage' ><button className='MenuButton'>마이페이지</button></Link> &nbsp;
             <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp; */}
             <Link to='/portfolio' ><button className='MenuButton'>portfolio</button></Link> &nbsp;
+            <Link to='/career' ><button className='MenuButton'>이력</button></Link> &nbsp;
             {/* <hr></hr> */}
           </div>
 
@@ -66,8 +68,10 @@ function App() {
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/portfolioInsert' element={<PortfolioInsert />} />
           <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail />} />
+          <Route path='/career' element={<Career />} />
         </Routes>
       </div>
+
       <div>
         <Bottom />
       </div>

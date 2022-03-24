@@ -7,6 +7,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import audit from './images/audit.png';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import FaceIcon from '@mui/icons-material/Face';
 
 function PortfolioListItem(props) {
     let history = useNavigate();
@@ -30,7 +33,9 @@ function PortfolioListItem(props) {
                         {props.port.portSubTitle}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                        Stack : {props.port.stackName}
+                        <Stack direction="row" spacing={1}>
+                            <Chip icon={<FaceIcon />} label={props.port.stackName} variant="outlined" />
+                        </Stack>
                         </Typography>
                     </CardContent>
                 </CardActionArea>
