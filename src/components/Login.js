@@ -35,7 +35,6 @@ function Login() {
                         // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.''
                         alert('로그인 실패');
                     }
-
                 }
             );
     }

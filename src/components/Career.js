@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Side from './Side';
-import componentAdd from './componentAdd';
+import DetailList from './DetailList';
+import DetailList1 from './DetailList1';
 
 import './Career.scss';
 
-function career(props) {   
+function Career(props) {   
 
-    const Add = componentAdd()
+    const [countList, setCountList] = useState([0])
+    const [countList1, setCountList1] = useState([0])
 
+    const onAddDetailDiv = () => {
+        let countArr = [...countList]
+        let counter = countArr.slice(-1)[0]
+        counter += 1
+        countArr.push(counter)
+        setCountList(countArr)
+    }
+
+    const onAddDetailDiv1 = () => {
+        let countArr1 = [...countList1]
+        let counter1 = countArr1.slice(-1)[0]
+        counter1 += 1
+        countArr1.push(counter1)
+        setCountList1(countArr1)
+    }
+        
     return (        
         <div>
             <Side/>
@@ -34,7 +52,8 @@ function career(props) {
 
                 <div id = "Education" class = "scrollContent">
                     <h1 id="title">학력</h1>
-                    <h5 id="smallTitle">학교명<span id = "red">&nbsp; &bull;</span></h5>
+                    <h5 id="smallTitle">학교명<span id =
+                     "red">&nbsp; &bull;</span></h5>
                     <input type="text"  id="input"  placeholder="ex) XX대학교"></input>
 
                     <h5 id="smallTitle">학력 구분</h5>
@@ -60,32 +79,20 @@ function career(props) {
 
                 <div id = "link" class = "scrollContent">
                     <h1 id="title">링크</h1>
-                    <img id="githubImg" alt ="github" src="./img/github.png"/>
-                    <input type="text" id="inputLink" placeholder="ex) javascript"/>
+                    <DetailList countList={countList} />
                     <div id="hrBar">
                     <br/>
-                    <hr id="addHr"/><button id="addButton" onClick={Add}>+</button>
+                    <hr id="addHr"/><button id="addButton" onClick={onAddDetailDiv}>+</button>                    
                     <h3 id = "EducationAdd">링크 추가</h3>
                     </div>
                 </div>
 
                 <div id = "course" class = "scrollContent">
-                    <h1 id="title">교육이력</h1>
-                    <h5 id="smallTitle">교육명</h5>
-                    <input type="text" id="input" placeholder="ex) 지능형 웹서비스 풀스택 개발"></input>
-
-                    <h5 id="smallTitle">교육기관</h5>
-                    <input type="text" id="input" placeholder="ex) 멀티캠퍼스"></input>
-
-                    <h5 id="smallTitle">교육기간</h5>
-                    <input type="text" id="input" placeholder="ex) 21.10.25 ~ 22.04.11"></input>
-
-                    <h5 id="smallTitle">상세내용</h5>
-                    <input type="text" id="input" placeholder="ex) 웹서비스 개발에 필요한 프론트엔드, 백엔드 기술을 아울러 학습, 활용 가능하도록 실무 능력 상승"></input>
-                    
+                    <h1 id="title">교육이력</h1>                   
+                    <DetailList1 countList={countList1} />
                     <div id="hrBar">
                     <br/>
-                    <hr id="addHr"/><button id="addButton">+</button>
+                    <hr id="addHr"/><button id="addButton" onClick={onAddDetailDiv1}>+</button>
                     <h3 id = "EducationAdd">교육 추가</h3>
                     </div>
                 </div>
@@ -104,4 +111,4 @@ function career(props) {
     );
 }
 
-export default career;
+export default Career;
