@@ -1,4 +1,3 @@
-
 .container {
   display: flex;
   justify-content: center;
@@ -35,8 +34,8 @@
   border-bottom: 3px solid black;
 }
 
-#login_input:focus { outline: none; }
-
+#memId:focus { outline: none; }
+#memPw:focus { outline: none; }
 
 .loginbutton {
   background-color: #4CAF50; /* Green */
