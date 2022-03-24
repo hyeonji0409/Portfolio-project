@@ -28,6 +28,7 @@ function About() {
             <div className="contain1">
                 <div className="about_theme">
                     <h1>Draw your PORTFOLIO !</h1>
+                    {/* <p></p> */}
                     <p className="about_text">나만의 이력과 포트폴리오를 손쉽게</p>
                     <p>Please draw your resume.</p>
                     <p>Like your beautiful and enjoyable life!</p>
