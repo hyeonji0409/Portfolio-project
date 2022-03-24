@@ -14,26 +14,28 @@ function PortfolioListItem(props) {
   return (
     <div className='PortfolioContents'> 
         <Card sx={{ width: 345}} >
-        <CardActionArea>
-            <CardMedia
-                component="img"
-                height="180"
-                image={audit}
-                alt="image"
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                {props.port.portTitle}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                {props.port.portSubTitle}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                Stack : {props.port.stackName}
-                </Typography>
-            </CardContent>
-        </CardActionArea>
-    </Card>
+            <Link to={"/portfolioDetailView/" + props.port.portNo}>
+                <CardActionArea>
+                    <CardMedia
+                        component="img"
+                        height="180"
+                        image= {audit}
+                        alt="image"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                        {props.port.portTitle}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                        {props.port.portSubTitle}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                        Stack : {props.port.stackName}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Link>
+        </Card>
     </div>
   )
 }

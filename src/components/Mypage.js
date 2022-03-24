@@ -5,6 +5,7 @@ import './Mypage.scss';
 import PortfolioInsert from './PortfolioInsert';
 import axios from 'axios';
 import PortfolioListItem from './PortfolioListItem';
+import './Portfolio.scss';
 
 function Mypage(props) {
     let history = useNavigate();
@@ -61,13 +62,13 @@ function Mypage(props) {
         <div class="voteContent">
             <div class="content-vote">
                 <div class="voteResult">         
-                     
- 
-                     {
-                        data && data.map(function (port, i) {
-                            return <PortfolioListItem port={port} key={i} />
-                        })
-                    }
+                    <div className='portCard'>
+                        {
+                            data && data.map(function (port, i) {
+                                return <PortfolioListItem port={port} key={i} />
+                            })
+                        }
+                    </div>
                 </div>
              </div>
                           {/* <div class="card card-2">

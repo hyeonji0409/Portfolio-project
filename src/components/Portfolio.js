@@ -17,10 +17,15 @@ function Portfolio(props) {
    // state
    const[data, setData] = useState([]);
    const [loading, setLoading] = useState(false);
+   const [memId, setInputId] = useState('')
+   const handleInputId = (e) => {
+       setInputId(e.target.value)
+   }
 
    const loadData = async () => {
        setLoading(true);
-       const response = await axios.get('http://localhost:8080/getAllPortfolio');
+       var memId = sessionStorage.getItem("memId");
+       const response = await axios.get('http://localhost:8080/getAllPortfolio/'+memId);
        console.log(response.data);
        setData(response.data.portList);
        setLoading(false);

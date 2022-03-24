@@ -11,6 +11,7 @@ import Logout from './components/Logout';
 import Mypage from './components/Mypage';
 import Portfolio from './components/Portfolio';
 import PortfolioInsert from './components/PortfolioInsert';
+import PortfolioiDetail from './components/PortfolioiDetail';
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
           <Route path='/logout' element={<Logout />} />
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/portfolioInsert' element={<PortfolioInsert/>} />
+          <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail/>} />
         </Routes>
       </div>
       <div>
