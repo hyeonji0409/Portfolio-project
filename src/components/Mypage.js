@@ -37,75 +37,44 @@ function Mypage(props) {
     }, []);
 
     return(
-        <div className='box'>
-                <h1>{memId}</h1>
-        <h1>My Page</h1>
+        <div className='wrap'>
+        <h1>{memId}My Page</h1>
         <div className="buttonbox">
         <Link to='/portfolioInsert' ><button className="voteBtn">포트폴리오 등록</button></Link> &nbsp;
-        <button className="voteBtn">이력서 등록</button>
+
         <Routes>
         <Route path='/portfolioInsert' element={<PortfolioInsert/>} />
         </Routes>
 
         </div>
-        <br/><br/>
-    <div class="voteMain ">
         
-        <input type="radio" id="tab1" name="show" checked/>
-        <input type="radio" id="tab2" name="show" />
+        <br/><br/>
 
-        <div class="tab">
-            <label for="tab1">포트폴리오</label>
-            <label for="tab2">이력서</label>
-        </div>
+        
+        
 
-        <div class="voteContent">
-            <div class="content-vote">
-                <div class="voteResult">         
-                    <div className='portCard'>
-                        {
-                            data && data.map(function (port, i) {
-                                return <PortfolioListItem port={port} key={i} />
-                            })
-                        }
-                    </div>
+
+            <h1>포트폴리오</h1>
+            <div className='portCard'>
+                     {
+                        data && data.map(function (port, i) {
+                            return <PortfolioListItem port={port} key={i} />
+                        })
+                    }
                 </div>
-             </div>
-                          {/* <div class="card card-2">
+
+                  {/* <div class="card card-2">
                           <table class="portfoliobox">
                             <td>1</td><td>이력서 제목 2</td><td>이력서 간단한 설명</td><td>깃 허브 주소</td><td>삭제</td>
                         </table>
                       	</div> */}
                           
     
-            <div class="content-vote"> 
-                <div class="voteResult">
-                
-                      	<div class="card card-2">
-                      	<table class="portfoliobox">
-                            <td>1</td><td>포트폴리오 제목 1</td><td>포트폴리오 간단한 설명</td><td>깃 허브 주소</td><td>삭제</td>
-                        </table>
-                      	</div>
-
-                          <div class="card card-2">
-                      	<table class="portfoliobox">
-                            <td>2</td><td>포트폴리오 제목 2</td><td>포트폴리오 간단한 설명</td><td>깃 허브 주소</td><td>삭제</td>
-                        </table>
-                      	</div>
-
-                          <div class="card card-2">
-                      	<table class="portfoliobox">
-                            <td>3</td><td>포트폴리오 제목 3</td><td>포트폴리오 간단한 설명</td><td>깃 허브 주소</td><td>삭제</td>
-                        </table>
-                      	</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
 
 
 
+
+                          </div>
     )
 }
  
