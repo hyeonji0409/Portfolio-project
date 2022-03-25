@@ -28,6 +28,7 @@ function Career(props) {
         
     return (        
         <div>
+           <div>
             <Side/>
             <div id="wrap">                
             <div id = "Privacy">
@@ -107,6 +108,8 @@ function Career(props) {
                     </div>
                 </div>
             </div>
+            
+           </div>
         </div>
     );
 }

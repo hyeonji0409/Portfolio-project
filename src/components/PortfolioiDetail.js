@@ -19,7 +19,8 @@ function PortfolioiDetail(props) {
         portSubTitle: '',
         gitLink: '',
         portDetails: '',
-        portImages: ''
+        portImages: '',
+        stackName: ''
     });
 
     const [loading, setLoading] = useState(false);
@@ -37,7 +38,8 @@ function PortfolioiDetail(props) {
             portSubTitle: response.data.portSubTitle,
             gitLink: response.data.gitLink,
             portDetails: response.data.portDetails,
-            portImages: response.data.portImages
+            portImages: response.data.portImages,
+            stackName: response.data.stackName
         });
         setLoading(false);
     }
@@ -59,7 +61,7 @@ function PortfolioiDetail(props) {
                         제목
                     </th>
                     <td>
-                         {props.portTitle}
+                         {port.portTitle}
                     </td>
                 </tr>
 
@@ -68,7 +70,7 @@ function PortfolioiDetail(props) {
                         프로젝트 설명
                     </th>
                     <td>
-                       {props.portSubTitle}
+                       {port.portSubTitle}
                     </td>
                 </tr>
 
@@ -77,7 +79,7 @@ function PortfolioiDetail(props) {
                         기술 스택
                     </th>
                     <td>
-                       {props.stackName}
+                       {port.stackName}
                     </td>
                 </tr>
 
@@ -86,30 +88,12 @@ function PortfolioiDetail(props) {
                         Github 주소
                     </th>
                     <td>
-                        {props.gitLink}
+                        {port.gitLink}
                     </td>
                 </tr>
             </table>
             <div className='editor'>
-            <CKEditor
-                    editor={ ClassicEditor }
-                    
-                    data={props.portDetails}
-                    onReady={ editor => {
-                        // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
-                    } }
-                    onChange={ ( event, editor ) => {
-                        const data = editor.getData();
-                        console.log( { event, editor, data } );
-                    } }
-                    onBlur={ ( event, editor ) => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ ( event, editor ) => {
-                        console.log( 'Focus.', editor );
-                    } }
-                />
+                {port.portDetails}
             </div>		
             	
             <input class="portBtn" type='reset' value="취소"/>

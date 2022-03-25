@@ -46,11 +46,11 @@ function App() {
             <Link to='/' ><button className='MenuButton'>home</button></Link> &nbsp;
             <Link to='/introduce' ><button className='MenuButton'>introduce</button></Link> &nbsp;
             <Link to='/login' ><button className='MenuButton'>login</button></Link> &nbsp;
-            {/* <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
-            <Link to='/mypage' ><button className='MenuButton'>마이페이지</button></Link> &nbsp;
-            <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp; */}
+            {/* <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp; */}
+            <Link to='/mypage' ><button className='MenuButton'>mypage</button></Link> &nbsp;
+          <button className='MenuButton' onClick={onClickLogout}>logout</button> &nbsp;
             <Link to='/portfolio' ><button className='MenuButton'>portfolio</button></Link> &nbsp;
-            <Link to='/career' ><button className='MenuButton'>이력</button></Link> &nbsp;
+            <Link to='/career' ><button className='MenuButton'>career</button></Link> &nbsp;
             {/* <hr></hr> */}
           </div>
 
