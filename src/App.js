@@ -1,3 +1,4 @@
+
 import { useState, useRef, useCallback } from 'react';
 import './App.css';
 import Login from './components/Login';
@@ -12,50 +13,50 @@ import Mypage from './components/Mypage';
 import Portfolio from './components/Portfolio';
 import PortfolioInsert from './components/PortfolioInsert';
 import PortfolioiDetail from './components/PortfolioiDetail';
-import TodolistDetail from './components/TodolistDetail';
-import TodoList from './components/TodoList';
-
-
+import Career from './components/Career';
 
 
 function App() {
   let history = useNavigate();
 
-    const [memId, setInputId] = useState('')
-    const [memPw, setInputPw] = useState('')
- 
-    const handleInputId = (e) => {
-        setInputId(e.target.value)
-    }
- 
-    const handleInputPw = (e) => {
-        setInputPw(e.target.value)
-        
-    }
- 
-    const onClickLogout = () => {
-        sessionStorage.removeItem("memId");
+  const [memId, setInputId] = useState('')
+  const [memPw, setInputPw] = useState('')
 
-        alert('로그아웃 되었습니다')
-        history('/login');   
+  const handleInputId = (e) => {
+    setInputId(e.target.value)
+  }
 
-    }
+  const handleInputPw = (e) => {
+    setInputPw(e.target.value)
+
+  }
+
+  const onClickLogout = () => {
+    sessionStorage.removeItem("memId");
+
+    alert('로그아웃 되었습니다')
+    history('/login');
+
+  }
   return (
     <>
       <div className="App">
         <div className='MenuBar'>
-          <Link to='/' ><button className='MenuButton'>home</button></Link> &nbsp;
-          <Link to='/introduce' ><button className='MenuButton'>introduce</button></Link> &nbsp;
-          <Link to='/login' ><button className='MenuButton'>login</button></Link> &nbsp;
-          <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
-          <Link to='/mypage' ><button className='MenuButton'>마이페이지</button></Link> &nbsp;
-          <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp;
-          <Link to='/portfolio' ><button className='MenuButton'>portfolio</button></Link> &nbsp;
-          <Link to='/todolist'><button className='MenuButton'>todolist</button></Link> &nbsp;
 
-          {/* <hr></hr> */}
+          <div className="logo_div"><h1>Draw your PORTFOLIO</h1></div>
+          <div className="link_div">
+            <Link to='/' ><button className='MenuButton'>home</button></Link> &nbsp;
+            <Link to='/introduce' ><button className='MenuButton'>introduce</button></Link> &nbsp;
+            <Link to='/login' ><button className='MenuButton'>login</button></Link> &nbsp;
+//             <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
+            <Link to='/mypage' ><button className='MenuButton'>마이페이지</button></Link> &nbsp;
+            <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp; 
+            <Link to='/portfolio' ><button className='MenuButton'>portfolio</button></Link> &nbsp;
+            <Link to='/career' ><button className='MenuButton'>이력</button></Link> &nbsp;
+            <Link to='/todolist'><button className='MenuButton'>todolist</button></Link> &nbsp;
+            {/* <hr></hr> */}
+          </div>
         </div>
-
 
 
         <Routes>
@@ -69,11 +70,10 @@ function App() {
           <Route path='/portfolioInsert' element={<PortfolioInsert/>} />
           <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail/>} />
           <Route path='/todolist' element={<TodolistDetail />} /> 
-          {/* <Route path='/todolist' element={<TodoList />} /> */}
-
-
+          <Route path='/career' element={<Career />} />
         </Routes>
       </div>
+
       <div>
         <Bottom />
       </div>
