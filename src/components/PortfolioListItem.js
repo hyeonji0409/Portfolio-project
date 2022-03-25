@@ -26,16 +26,16 @@ function PortfolioListItem(props) {
                         alt="image"
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography gutterBottom variant="h5" component="div" className='cardText' fontWeight='bold'>
                         {props.port.portTitle}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body2" color="text.secondary" textAlign="left">
                         {props.port.portSubTitle}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                        <Stack direction="row" spacing={1}>
-                            <Chip icon={<FaceIcon />} label={props.port.stackName} variant="outlined" />
-                        </Stack>
+                        <Typography variant="body2" color="text.secondary" marginTop="15px">
+                            <Stack direction="row" spacing={1}>
+                                <Chip icon={<FaceIcon />} label={props.port.stackName} variant="outlined" />
+                            </Stack>
                         </Typography>
                     </CardContent>
                 </CardActionArea>
