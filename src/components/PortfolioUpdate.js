@@ -7,7 +7,7 @@ import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-function PortfolioInsert(props) {
+function PortfolioUpdate(props) {
     let history = useNavigate();
 
     // state
@@ -184,4 +184,4 @@ const stacks = [
     { label: 'Git', stackNo: 9 },
 ];
 
-export default PortfolioInsert;
+export default PortfolioUpdate;

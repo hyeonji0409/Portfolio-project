@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -13,6 +13,8 @@ import FaceIcon from '@mui/icons-material/Face';
 
 function PortfolioListItem(props) {
     let history = useNavigate();
+
+    
 
   return (
     <div className='PortfolioContents'> 
