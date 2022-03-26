@@ -22,8 +22,6 @@ function PortfolioInsert(props) {
         // portImages: ''
     });
 
-    const [viewContent, setViewContent] = useState([]);
-
     const getValue = (e) => {
         const { name, value } = e.target; // e.target에서 name과 value 추출
         setPort({
@@ -57,7 +55,7 @@ function PortfolioInsert(props) {
             .then(
                 response => {
                     alert("등록 완료");
-                    //history('/portfolio'); // portfolio 페이지로 이동
+                    history('/portfolio'); // portfolio 페이지로 이동
                 }
             );
     }

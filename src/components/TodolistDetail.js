@@ -6,7 +6,6 @@ import TodoList from './TodoList';
 
 
 
-
 function TodolistDetail() {
     const [todos, setTodos] = useState([
         

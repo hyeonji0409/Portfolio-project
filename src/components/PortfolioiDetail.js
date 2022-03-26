@@ -26,7 +26,8 @@ function PortfolioiDetail(props) {
     const onUpdateItem = () => {
         if(window.confirm("수정하시겠습니까?")){
             history('/portfolioUpdate/' + portNo);
-            window.location.reload();
+            
+            //window.location.reload();
         }
     }
 
@@ -118,7 +119,7 @@ function PortfolioiDetail(props) {
                 <textarea value={port.portDetails} readOnly></textarea>
             </div>		
             	
-            <Link to='/portfolioUpdate' ><button className='MenuButton' onClick={onUpdateItem}>수정</button></Link>
+            <button className='MenuButton' onClick={onUpdateItem}>수정</button>
             <button className='MenuButton' onClick={onDeleteItem}>삭제</button>
             </div>
     </div>

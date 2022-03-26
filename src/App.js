@@ -69,7 +69,7 @@ function App() {
           <Route path='/logout' element={<Logout />} />
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/portfolioInsert' element={<PortfolioInsert/>} />
-          <Route path='/portfolioUpdate' element={<PortfolioUpdate/>} />
+          <Route path='/portfolioUpdate/:portNo' element={<PortfolioUpdate/>} />
           <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail/>} />
           <Route path='/todolist' element={<TodolistDetail />} /> 
           <Route path='/career' element={<Career />} />
