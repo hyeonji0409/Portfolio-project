@@ -41,6 +41,7 @@ function Mypage(props) {
         <h1>{memId}My Page</h1>
         <div className="buttonbox">
         <Link to='/portfolioInsert' ><button className="voteBtn">포트폴리오 등록</button></Link> &nbsp;
+        <Link to='/career' ><button className="voteBtn">이력서 등록</button></Link> &nbsp;
 
         <Routes>
         <Route path='/portfolioInsert' element={<PortfolioInsert/>} />

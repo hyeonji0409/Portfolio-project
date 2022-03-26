@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import React, { useState, Component } from "react";
+import React, { useState, Component, useEffect } from "react";
 import axios from 'axios';
 import './PortfolioInsert.scss';
 import TextField from '@mui/material/TextField';
@@ -14,12 +14,12 @@ function PortfolioInsert(props) {
     const [port, setPort] = useState({
         memId: '',
         portStackNo: '',
-        portNo: '',
+        // portNo: '',
         portTitle: '',
         portSubTitle: '',
         gitLink: '',
         portDetails: '',
-        portImages: ''
+        // portImages: ''
     });
 
     const onChange = (e) => {
@@ -34,13 +34,15 @@ function PortfolioInsert(props) {
         setPort({
             memId: '',
             portStackNo: '',
-            portNo: '',
+            // portNo: '',
             portTitle: '',
             portSubTitle: '',
             gitLink: '',
             portDetails: '',
-            portImages: ''
+            // portImages: ''
         })
+        alert("글 등록을 취소하시겠습니까?");
+        history('/portfolio');
     };
 
     const onSubmit = (e) => {
@@ -48,7 +50,7 @@ function PortfolioInsert(props) {
 
         var frmData = new FormData(document.portfolioInsert);
 
-        axios.post('http://localhost:8080/insertPortfolio/' + frmData)
+        axios.post('http://localhost:8080/insertPortfolio/', frmData)
             .then(
                 response => {
                     alert("등록 완료");
@@ -65,6 +67,25 @@ function PortfolioInsert(props) {
 
         <form name='portfolioInsert' onSubmit={onSubmit} onReset={onReset}>
             <table className='poTable'>
+                <tbody>
+                <tr>
+                    <th>
+                        글쓴이
+                    </th>
+                    <td>
+                         <input type='text' name="memId" id="memId" 
+                         value={port.memId} onChange={onChange} maxLength="30" placeholder='제목을 입력하세요'></input>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        글번호
+                    </th>
+                    <td>
+                         <input type='int' name="portNo" id="portNo" 
+                         value={port.portNo} onChange={onChange} maxLength="30" placeholder='제목을 입력하세요'></input>
+                    </td>
+                </tr>
                 <tr>
                     <th>
                         제목
@@ -90,14 +111,16 @@ function PortfolioInsert(props) {
                         기술 스택
                     </th>
                     <td>
-                        <Autocomplete
+                        {/* <Autocomplete
                             disablePortal
                             id="combo-box-demo"
                             options={stacks}
                             sx={{ width: 300 }}
                             value={port.stackNo} onChange={onChange}
                             renderInput={(params) => <TextField {...params} label="Stack" />}
-                        />
+                        /> */}
+                        <input type='int' name="portStackNo" id="portStackNo" 
+                        value={port.portStackNo} onChange={onChange} maxLength="100" placeholder='프로젝트에 대해 간단히 설명해주세요'></input>
                     </td>
                 </tr>
 
@@ -110,9 +133,13 @@ function PortfolioInsert(props) {
                         value={port.gitLink} onChange={onChange} placeholder='Github 링크를 첨부해주세요'></input>
                     </td>
                 </tr>
+                </tbody>
             </table>
             <div className='editor'>
                 <CKEditor
+                    name="gitLink" 
+                    id="gitLink" 
+                    value={port.portDetails}
                     editor={ ClassicEditor }
                     config={{
                         placeholder: "글을 입력해주세요"
@@ -120,24 +147,26 @@ function PortfolioInsert(props) {
                     data=""
                     onReady={ editor => {
                         // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
+                        // console.log( 'Editor is ready to use!', editor );
                     } }
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
-                        console.log( { event, editor, data } );
+                        // console.log( { event, editor, data } );
                     } }
                     onBlur={ ( event, editor ) => {
-                        console.log( 'Blur.', editor );
+                       //  console.log( 'Blur.', editor );
                     } }
                     onFocus={ ( event, editor ) => {
-                        console.log( 'Focus.', editor );
+                       //  console.log( 'Focus.', editor );
                     } }
-                    value={port.portDetails}
                 />
+                {/* <input type='text' name="portDetails" id="portDetails" 
+                        value={port.portDetails} onChange={onChange} placeholder='Github 링크를 첨부해주세요'></input> */}
             </div>		
             	
             {/* <input class="portBtn" type='reset' value="취소"/> */}
             <input class="portBtn" type='submit' value="등록"/>
+            <input class="portBtn" type='reset' value="취소"/>
       			
         </form>
     </div>

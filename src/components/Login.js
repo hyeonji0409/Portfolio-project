@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Login.scss';
 
@@ -31,7 +31,7 @@ function Login() {
                         alert("로그인 성공");
                         sessionStorage.setItem("memId", memId);
 
-                        history('/introduce'); // 메인 화면으로 이동
+                        history('/mypage'); // 메인 화면으로 이동
                     } else {
                         // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.''
                         alert('로그인 실패');
@@ -58,6 +58,7 @@ function Login() {
                         </div>
                         <div className="buttons">
                             <input className="loginbutton" type="submit" value="login" />
+                            <Link to='/signup' ><input className="loginbutton" type="submit" value="signup" /></Link>
                             {/* <button class="loginbutton" type='button' onClick={onClickLogin}>Login</button> */}
                         </div>
                     </form>
