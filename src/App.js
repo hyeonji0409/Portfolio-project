@@ -13,6 +13,7 @@ import Mypage from './components/Mypage';
 import Portfolio from './components/Portfolio';
 import PortfolioInsert from './components/PortfolioInsert';
 import PortfolioiDetail from './components/PortfolioiDetail';
+import TodolistDetail from './components/TodolistDetail';
 import Career from './components/Career';
 import TodolistDetail from './components/TodolistDetail';
 import PortfolioUpdate from './components/PortfolioUpdate';
@@ -50,9 +51,9 @@ function App() {
             <Link to='/' ><button className='MenuButton'>home</button></Link> &nbsp;
             <Link to='/introduce' ><button className='MenuButton'>introduce</button></Link> &nbsp;
             <Link to='/login' ><button className='MenuButton'>login</button></Link> &nbsp;
-            {/* <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp; */}
+            <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
             <Link to='/mypage' ><button className='MenuButton'>마이페이지</button></Link> &nbsp;
-            <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp; 
+            <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp;
             <Link to='/portfolio' ><button className='MenuButton'>portfolio</button></Link> &nbsp;
             <Link to='/career' ><button className='MenuButton'>이력</button></Link> &nbsp;
             {/* <hr></hr> */}
@@ -72,6 +73,7 @@ function App() {
           <Route path='/portfolioUpdate/:portNo' element={<PortfolioUpdate/>} />
           <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail/>} />
           <Route path='/todolist' element={<TodolistDetail />} /> 
+
           <Route path='/career' element={<Career />} />
         </Routes>
       </div>
