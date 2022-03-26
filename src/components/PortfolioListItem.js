@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,9 +7,14 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import audit from './images/audit.png';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import FaceIcon from '@mui/icons-material/Face';
 
 function PortfolioListItem(props) {
     let history = useNavigate();
+
+    
 
   return (
     <div className='PortfolioContents'> 
@@ -23,14 +28,16 @@ function PortfolioListItem(props) {
                         alt="image"
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography gutterBottom variant="h5" component="div" className='cardText' fontWeight='bold'>
                         {props.port.portTitle}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body2" color="text.secondary" textAlign="left">
                         {props.port.portSubTitle}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                        Stack : {props.port.stackName}
+                        <Typography variant="body2" color="text.secondary" marginTop="15px">
+                            <Stack direction="row" spacing={1}>
+                                <Chip icon={<FaceIcon />} label={props.port.stackName} variant="outlined" />
+                            </Stack>
                         </Typography>
                     </CardContent>
                 </CardActionArea>

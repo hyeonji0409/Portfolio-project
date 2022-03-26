@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './PortfolioInsert.scss';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -10,6 +10,27 @@ function PortfolioiDetail(props) {
 
     const { portNo } = useParams();
 
+    const onDeleteItem = () => {
+        if (window.confirm("삭제하시겠습니까?")) {
+            console.log(portNo);
+            axios.get('http://localhost:8080/deletePortfolio/' + portNo)
+                .then(
+                    () => {
+                        history('/portfolio');
+                        window.location.reload();
+                    }
+                ).catch(err => console.log(err));
+        }
+    }
+
+    const onUpdateItem = () => {
+        if(window.confirm("수정하시겠습니까?")){
+            history('/portfolioUpdate/' + portNo);
+            
+            //window.location.reload();
+        }
+    }
+
     // state
     const [port, setPort] = useState({
         memId: '',
@@ -19,7 +40,8 @@ function PortfolioiDetail(props) {
         portSubTitle: '',
         gitLink: '',
         portDetails: '',
-        portImages: ''
+        portImages: '',
+        stackName: ''
     });
 
     const [loading, setLoading] = useState(false);
@@ -27,7 +49,7 @@ function PortfolioiDetail(props) {
     const loadData = async () => {
         setLoading(true);
         const response = await axios.get('http://localhost:8080/portfolioDetailView/' + portNo);
-        console.log(response.data);
+        console.log(response.data.portNo);
 
         setPort({
             memId: response.data.memId,
@@ -37,7 +59,8 @@ function PortfolioiDetail(props) {
             portSubTitle: response.data.portSubTitle,
             gitLink: response.data.gitLink,
             portDetails: response.data.portDetails,
-            portImages: response.data.portImages
+            portImages: response.data.portImages,
+            stackName: response.data.stackName
         });
         setLoading(false);
     }
@@ -46,20 +69,22 @@ function PortfolioiDetail(props) {
         loadData();
     }, []);
 
+    
+
   return (
     <div className='container_portfolioInsert'>
         <div className='insertForm'>
             <h2>{port.memId}'s Project</h2>
         </div>
 
-        <form className='portfolioInsert' name='portfolioInsert' >
+        <div className='portfolioInsert' name='portfolioInsert' >
             <table className='poTable'>
                 <tr>
                     <th>
                         제목
                     </th>
                     <td>
-                         {props.portTitle}
+                         {port.portTitle}
                     </td>
                 </tr>
 
@@ -68,7 +93,7 @@ function PortfolioiDetail(props) {
                         프로젝트 설명
                     </th>
                     <td>
-                       {props.portSubTitle}
+                       {port.portSubTitle}
                     </td>
                 </tr>
 
@@ -77,7 +102,7 @@ function PortfolioiDetail(props) {
                         기술 스택
                     </th>
                     <td>
-                       {props.stackName}
+                       {port.stackName}
                     </td>
                 </tr>
 
@@ -86,36 +111,17 @@ function PortfolioiDetail(props) {
                         Github 주소
                     </th>
                     <td>
-                        {props.gitLink}
+                        {port.gitLink}
                     </td>
                 </tr>
             </table>
             <div className='editor'>
-            <CKEditor
-                    editor={ ClassicEditor }
-                    
-                    data={props.portDetails}
-                    onReady={ editor => {
-                        // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
-                    } }
-                    onChange={ ( event, editor ) => {
-                        const data = editor.getData();
-                        console.log( { event, editor, data } );
-                    } }
-                    onBlur={ ( event, editor ) => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ ( event, editor ) => {
-                        console.log( 'Focus.', editor );
-                    } }
-                />
+                <textarea value={port.portDetails} readOnly></textarea>
             </div>		
             	
-            <input class="portBtn" type='reset' value="취소"/>
-            <input class="portBtn" type='submit' value="등록"/>
-      			
-        </form>
+            <button className='MenuButton' onClick={onUpdateItem}>수정</button>
+            <button className='MenuButton' onClick={onDeleteItem}>삭제</button>
+            </div>
     </div>
   )
 }

@@ -25,6 +25,10 @@
     margin-bottom: 30px;
 }
 
+.PortfolioContents:hover{
+    color: black;
+}
+
 .contentBox{
     border-radius: 10px;
     box-shadow: 10px 10px 10px;
@@ -61,6 +65,10 @@
 
 a{
     text-decoration: none;
+}
+
+a:hover{
+    color: black;
 }
 
 #writeBtn{
