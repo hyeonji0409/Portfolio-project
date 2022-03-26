@@ -13,6 +13,7 @@ import Mypage from './components/Mypage';
 import Portfolio from './components/Portfolio';
 import PortfolioInsert from './components/PortfolioInsert';
 import PortfolioiDetail from './components/PortfolioiDetail';
+import TodolistDetail from './components/TodolistDetail';
 import Career from './components/Career';
 
 
@@ -48,9 +49,9 @@ function App() {
             <Link to='/' ><button className='MenuButton'>home</button></Link> &nbsp;
             <Link to='/introduce' ><button className='MenuButton'>introduce</button></Link> &nbsp;
             <Link to='/login' ><button className='MenuButton'>login</button></Link> &nbsp;
-//             <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
+            <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
             <Link to='/mypage' ><button className='MenuButton'>마이페이지</button></Link> &nbsp;
-            <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp; 
+            <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp;
             <Link to='/portfolio' ><button className='MenuButton'>portfolio</button></Link> &nbsp;
             <Link to='/career' ><button className='MenuButton'>이력</button></Link> &nbsp;
             <Link to='/todolist'><button className='MenuButton'>todolist</button></Link> &nbsp;
@@ -67,9 +68,9 @@ function App() {
           <Route path='/mypage' element={<Mypage />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/portfolio' element={<Portfolio />} />
-          <Route path='/portfolioInsert' element={<PortfolioInsert/>} />
-          <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail/>} />
-          <Route path='/todolist' element={<TodolistDetail />} /> 
+          <Route path='/portfolioInsert' element={<PortfolioInsert />} />
+          <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail />} />
+          <Route path='/todolist' element={<TodolistDetail />} />
           <Route path='/career' element={<Career />} />
         </Routes>
       </div>
