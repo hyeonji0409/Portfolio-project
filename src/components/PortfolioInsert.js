@@ -18,16 +18,17 @@ function PortfolioInsert(props) {
         portTitle: '',
         portSubTitle: '',
         gitLink: '',
-        portDetails: '',
+        portDetails: ''
         // portImages: ''
     });
 
-    const onChange = (e) => {
-        const { value, name } = e.target; // e.target에서 name과 value 추출
+    const getValue = (e) => {
+        const { name, value } = e.target; // e.target에서 name과 value 추출
         setPort({
             ...port, // 기존의 port객체 복사
             [name]: value // name 키를 가진 값을 value로 설정
         });
+        console.log(port);
     };
 
     const onReset = () => {
@@ -38,7 +39,7 @@ function PortfolioInsert(props) {
             portTitle: '',
             portSubTitle: '',
             gitLink: '',
-            portDetails: '',
+            portDetails: ''
             // portImages: ''
         })
         alert("글 등록을 취소하시겠습니까?");
@@ -48,7 +49,7 @@ function PortfolioInsert(props) {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        var frmData = new FormData(document.portfolioInsert);
+       var frmData = new FormData(document.portfolioInsert);
 
         axios.post('http://localhost:8080/insertPortfolio/', frmData)
             .then(
@@ -74,16 +75,7 @@ function PortfolioInsert(props) {
                     </th>
                     <td>
                          <input type='text' name="memId" id="memId" 
-                         value={port.memId} onChange={onChange} maxLength="30" placeholder='제목을 입력하세요'></input>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        글번호
-                    </th>
-                    <td>
-                         <input type='int' name="portNo" id="portNo" 
-                         value={port.portNo} onChange={onChange} maxLength="30" placeholder='제목을 입력하세요'></input>
+                         value={port.memId} onChange={getValue} maxLength="30" placeholder='제목을 입력하세요'></input>
                     </td>
                 </tr>
                 <tr>
@@ -92,7 +84,7 @@ function PortfolioInsert(props) {
                     </th>
                     <td>
                          <input type='text' name="portTitle" id="portTitle" 
-                         value={port.portTitle} onChange={onChange} maxLength="30" placeholder='제목을 입력하세요'></input>
+                         value={port.portTitle} onChange={getValue} maxLength="30" placeholder='제목을 입력하세요'></input>
                     </td>
                 </tr>
 
@@ -102,7 +94,7 @@ function PortfolioInsert(props) {
                     </th>
                     <td>
                         <input type='text' name="portSubTitle" id="portSubTitle" 
-                        value={port.portSubTitle} onChange={onChange} maxLength="100" placeholder='프로젝트에 대해 간단히 설명해주세요'></input>
+                        value={port.portSubTitle} onChange={getValue} maxLength="100" placeholder='프로젝트에 대해 간단히 설명해주세요'></input>
                     </td>
                 </tr>
 
@@ -120,7 +112,7 @@ function PortfolioInsert(props) {
                             renderInput={(params) => <TextField {...params} label="Stack" />}
                         /> */}
                         <input type='int' name="portStackNo" id="portStackNo" 
-                        value={port.portStackNo} onChange={onChange} maxLength="100" placeholder='프로젝트에 대해 간단히 설명해주세요'></input>
+                        value={port.portStackNo} onChange={getValue} maxLength="100" placeholder='프로젝트에 대해 간단히 설명해주세요'></input>
                     </td>
                 </tr>
 
@@ -130,16 +122,14 @@ function PortfolioInsert(props) {
                     </th>
                     <td>
                         <input type='text' name="gitLink" id="gitLink" 
-                        value={port.gitLink} onChange={onChange} placeholder='Github 링크를 첨부해주세요'></input>
+                        value={port.gitLink} onChange={getValue} placeholder='Github 링크를 첨부해주세요'></input>
                     </td>
                 </tr>
                 </tbody>
             </table>
             <div className='editor'>
-                <CKEditor
-                    name="gitLink" 
-                    id="gitLink" 
-                    value={port.portDetails}
+                {/* <CKEditor
+                    id="portDetails"
                     editor={ ClassicEditor }
                     config={{
                         placeholder: "글을 입력해주세요"
@@ -151,6 +141,12 @@ function PortfolioInsert(props) {
                     } }
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
+                        // console.log({event, editor, data});
+                        setPort({
+                            ...port,
+                            portDetails: data
+                        })
+                        console.log(data);
                         // console.log( { event, editor, data } );
                     } }
                     onBlur={ ( event, editor ) => {
@@ -159,13 +155,14 @@ function PortfolioInsert(props) {
                     onFocus={ ( event, editor ) => {
                        //  console.log( 'Focus.', editor );
                     } }
-                />
-                {/* <input type='text' name="portDetails" id="portDetails" 
-                        value={port.portDetails} onChange={onChange} placeholder='Github 링크를 첨부해주세요'></input> */}
+                /> */}
+                <textarea type='textarea' name="portDetails" id="portDetails" 
+                        value={port.portDetails} onChange={getValue} placeholder='내용을 입력해주세요'></textarea>
+                <input type="file" name="file" className='uploadFile' readOnly></input>
             </div>		
             	
             {/* <input class="portBtn" type='reset' value="취소"/> */}
-            <input class="portBtn" type='submit' value="등록"/>
+            <input class="portBtn" type='submit' value="등록" />
             <input class="portBtn" type='reset' value="취소"/>
       			
         </form>
@@ -185,4 +182,4 @@ const stacks = [
     { label: 'Git', stackNo: 9 },
 ];
 
-export default PortfolioInsert
+export default PortfolioInsert;

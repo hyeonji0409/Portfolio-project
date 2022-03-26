@@ -5,9 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
-
-
-
 const today = new Date();
 const dateString = today.toLocaleString('ko-KR', {
     year: 'numeric',
@@ -25,7 +22,8 @@ const TodoTemplate = ({ children }) => {
         <div className='TodoTemplate'>
             
             <div className="app-title">{dateString}  {dayName}<br></br>
-            님의 일정 관리</div>
+            {/* {memId}님의 일정 관리 */}
+            </div>
             <div className="content">{children}</div>
         </div>
     );

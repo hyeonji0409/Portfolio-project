@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './PortfolioInsert.scss';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -9,6 +9,27 @@ function PortfolioiDetail(props) {
     let history = useNavigate();
 
     const { portNo } = useParams();
+
+    const onDeleteItem = () => {
+        if (window.confirm("삭제하시겠습니까?")) {
+            console.log(portNo);
+            axios.get('http://localhost:8080/deletePortfolio/' + portNo)
+                .then(
+                    () => {
+                        history('/portfolio');
+                        window.location.reload();
+                    }
+                ).catch(err => console.log(err));
+        }
+    }
+
+    const onUpdateItem = () => {
+        if(window.confirm("수정하시겠습니까?")){
+            history('/portfolioUpdate/' + portNo);
+            
+            //window.location.reload();
+        }
+    }
 
     // state
     const [port, setPort] = useState({
@@ -48,13 +69,15 @@ function PortfolioiDetail(props) {
         loadData();
     }, []);
 
+    
+
   return (
     <div className='container_portfolioInsert'>
         <div className='insertForm'>
             <h2>{port.memId}'s Project</h2>
         </div>
 
-        <form className='portfolioInsert' name='portfolioInsert' >
+        <div className='portfolioInsert' name='portfolioInsert' >
             <table className='poTable'>
                 <tr>
                     <th>
@@ -93,13 +116,12 @@ function PortfolioiDetail(props) {
                 </tr>
             </table>
             <div className='editor'>
-                {port.portDetails}
+                <textarea value={port.portDetails} readOnly></textarea>
             </div>		
             	
-            <input class="portBtn" type='reset' value="취소"/>
-            <input class="portBtn" type='submit' value="등록"/>
-      			
-        </form>
+            <button className='MenuButton' onClick={onUpdateItem}>수정</button>
+            <button className='MenuButton' onClick={onDeleteItem}>삭제</button>
+            </div>
     </div>
   )
 }
