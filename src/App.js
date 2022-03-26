@@ -1,8 +1,9 @@
+
+import { useState, useRef, useCallback } from 'react';
 import './App.css';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import About from './components/About';
-import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Introduce from './components/Introduce';
 import { Link, Routes, Route } from 'react-router-dom';
@@ -41,19 +42,20 @@ function App() {
     <>
       <div className="App">
         <div className='MenuBar'>
+
           <div className="logo_div"><h1>Draw your PORTFOLIO</h1></div>
           <div className="link_div">
             <Link to='/' ><button className='MenuButton'>home</button></Link> &nbsp;
             <Link to='/introduce' ><button className='MenuButton'>introduce</button></Link> &nbsp;
             <Link to='/login' ><button className='MenuButton'>login</button></Link> &nbsp;
-            {/* <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
+//             <Link to='/signup' ><button className='MenuButton'>signup</button></Link> &nbsp;
             <Link to='/mypage' ><button className='MenuButton'>마이페이지</button></Link> &nbsp;
-            <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp; */}
+            <Link to='/logout' ><button className='MenuButton'>로그아웃</button></Link> &nbsp; 
             <Link to='/portfolio' ><button className='MenuButton'>portfolio</button></Link> &nbsp;
             <Link to='/career' ><button className='MenuButton'>이력</button></Link> &nbsp;
+            <Link to='/todolist'><button className='MenuButton'>todolist</button></Link> &nbsp;
             {/* <hr></hr> */}
           </div>
-
         </div>
 
 
@@ -65,10 +67,10 @@ function App() {
           <Route path='/mypage' element={<Mypage />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/portfolio' element={<Portfolio />} />
-          <Route path='/portfolioInsert' element={<PortfolioInsert />} />
-          <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail />} />
+          <Route path='/portfolioInsert' element={<PortfolioInsert/>} />
+          <Route path='/portfolioDetailView/:portNo' element={<PortfolioiDetail/>} />
+          <Route path='/todolist' element={<TodolistDetail />} /> 
           <Route path='/career' element={<Career />} />
-          
         </Routes>
       </div>
 
