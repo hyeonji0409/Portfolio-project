@@ -46,6 +46,7 @@ function App() {
       <div className="App">
         <div className='MenuBar'>
 
+
           <div className="logo_div"><h1>Draw your PORTFOLIO</h1></div>
           <div className="link_div">
             <Link to='/' ><button className='MenuButton'>home</button></Link> &nbsp;
