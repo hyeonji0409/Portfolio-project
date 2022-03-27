@@ -15,7 +15,6 @@ import PortfolioInsert from './components/PortfolioInsert';
 import PortfolioiDetail from './components/PortfolioiDetail';
 import TodolistDetail from './components/TodolistDetail';
 import Career from './components/Career';
-import TodolistDetail from './components/TodolistDetail';
 import PortfolioUpdate from './components/PortfolioUpdate';
 
 
